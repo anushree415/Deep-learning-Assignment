@@ -2,71 +2,82 @@
 Implementation of CNN and a Recurrent Neural Network models
 Author: Anushree D.  
 Course: Deep Learning  
-
 ---
 
 ## 📌 Overview  
-This repository contains three deep learning experiments implemented using TensorFlow/Keras:
+This repository contains **three deep learning experiments** implemented using **TensorFlow / Keras**:
 
-1. **CNN on CIFAR-10**  
-2. **CNN Transfer Learning on Flowers Dataset**  
-3. **RNN LSTM on IMDb Sentiment Analysis**
+1. **CNN on CIFAR-10** – Basic Convolutional Neural Network  
+2. **CNN Transfer Learning on Flowers Dataset** – EfficientNetB0  
+3. **RNN using LSTM on IMDb Reviews** – Sentiment Analysis  
 
-Each notebook includes model creation, training, evaluation, and saved results.
+Each experiment is implemented in a separate `.ipynb` notebook and includes:  
+✔ Dataset loading  
+✔ Model building  
+✔ Training  
+✔ Evaluation  
+✔ Saving results  
 
 ---
 
 # 1️⃣ CNN on CIFAR-10  
 **File:** `CNN_CIFAR10.ipynb`
 
-A simple convolutional neural network for CIFAR-10 image classification.
+### 📘 Description  
+A simple CNN built from scratch to classify 10 categories in the CIFAR-10 image dataset (airplane, car, bird, cat, etc.).
 
-### 🧠 Model Summary  
-- Conv2D + MaxPooling  
-- Flatten + Dense layers  
-- Softmax output for 10 classes  
+### 🧠 Key Steps  
+- Load CIFAR-10 dataset using `tf.keras.datasets`  
+- Normalize pixel values  
+- Build a CNN using Conv2D, MaxPooling, Flatten, Dense  
+- Train for multiple epochs  
+- Plot training accuracy and loss  
+- Save model & graphs
 
-### 📊 Accuracy Graph  
-![CNN CIFAR10 Accuracy](results/cifar10_accuracy.png)
-
-### 📉 Loss Graph  
-![CNN CIFAR10 Loss](results/cifar10_loss.png)
+### 📂 Dataset  
+CIFAR-10 (built-in TensorFlow dataset)
 
 ---
 
-# 2️⃣ CNN Transfer Learning — Flowers Dataset  
+# 2️⃣ CNN Transfer Learning on Flowers  
 **File:** `CNN_FLOWERS_TRANSFER.ipynb`
 
-Transfer learning using **EfficientNetB0** pretrained on ImageNet.
+### 📘 Description  
+Transfer learning using **EfficientNetB0** pretrained on ImageNet, applied to the **TensorFlow Flowers dataset** (5 categories).
 
-### 🧠 Model Steps  
-- Load `tf_flowers` dataset  
-- Resize to `224×224`  
-- Freeze EfficientNet base  
-- Add custom dense layers  
-- Fine-tune deeper layers  
+### 🧠 Key Steps  
+- Load dataset using TensorFlow Datasets (`tfds`)  
+- Resize images to 224×224  
+- Freeze base EfficientNet layers  
+- Add custom classification head  
+- Train head  
+- Fine-tune deeper layers (optional)  
+- Plot and save accuracy graphs  
+- Export trained model
 
-### 📊 Transfer Learning Accuracy  
-![Flowers Transfer Accuracy](results/flowers_transfer_accuracy.png)
-
-### 🌸 Sample Images from Dataset  
-![Flowers Samples](results/flowers_samples.png)
-
-> *(If you didn’t save sample images, you may remove the above line.)*
+### 📂 Dataset  
+TensorFlow Flowers Dataset (5 classes)  
+Loaded using `tfds.load('tf_flowers', ...)`
 
 ---
 
-# 3️⃣ RNN with LSTM — IMDb Sentiment Analysis  
+# 3️⃣ RNN with LSTM on IMDb Sentiment Analysis  
 **File:** `RNN_IMDB_LSTM.ipynb`
 
-Sentiment classification using **Embedding → LSTM → Dense** architecture.
+### 📘 Description  
+A simple RNN model using LSTM to classify IMDb movie reviews into **positive** or **negative** sentiment.
 
-### 📊 Training Accuracy  
-![LSTM Accuracy](results/lstm_accuracy.png)
+### 🧠 Key Steps  
+- Load IMDb dataset using Keras  
+- Preprocess sequences and pad them  
+- Build model (Embedding → LSTM → Dense)  
+- Train model  
+- View accuracy and summary  
 
-### 📉 Training Loss  
-![LSTM Loss](results/lstm_loss.png)
+### 📂 Dataset  
+IMDb Reviews (built-in TensorFlow dataset)
 
 ---
 
-# 📂 Project Structure  
+# 📁 Folder Structure  
+
